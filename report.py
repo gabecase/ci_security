@@ -13,10 +13,10 @@ alerts = zap.core.alerts()
 # create a data structure to match our output
 sort_by_url = defaultdict(list)
 for alert in alerts:
-    sort_by_url[alert['url']].append({
-                                'risk':  alert['risk'],
-                                'alert': alert['alert']
-                                })
+    url = alert['url']
+    if 'rackspace' in url:
+        sort_by_url[url].append({'risk':  alert['risk'],
+                                'alert': alert['alert']})
 
 # print a useful set of tables of the alerts
 for url in sort_by_url:
