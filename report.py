@@ -6,7 +6,7 @@ from collections import defaultdict
 from prettytable import PrettyTable
 
 zap = ZAPv2()
-zap = ZAPv2(proxies={'http': 'http://127.0.0.1:8500', 'https': 'http://127.0.0.1:8500'})
+zap = ZAPv2(proxies={'http': 'http://127.0.0.1:8787', 'https': 'http://127.0.0.1:8787'})
 alerts = zap.core.alerts()
 #pprint (zap.core.alerts())
 
